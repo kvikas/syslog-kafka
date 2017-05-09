@@ -140,7 +140,7 @@ func (this *SyslogProducer) startTCPServer() {
 				return
 			}
 
-			this.scan(connection)
+			go this.scan(connection)
 		}
 	}()
 	glog.Infof("Listening for messages at TCP %s", this.config.TCPAddr)
